@@ -10,7 +10,12 @@
     <form class="container">
         <h1 class="title">Libros</h1>
         <p class="paragraph">Introduce el libro que quieres leer</p>
-        <input class="text-input" name="title" type="text" />
+    <div class="div-input">
+        <input class="text-input" name="title" type="text" placeholder="Introduce el libro que quieres ver" />
+        <button class="add-button" onclick="printBooks()">+</button>    
+    </div>
+    <section id="list-books">
+    </section>
     </form>
 
     <script src="./src/script.js"></script>

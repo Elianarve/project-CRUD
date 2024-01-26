@@ -19,11 +19,23 @@
     border: 1px solid rosybrown;
 }
 
+.div-input{
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+}
+
 .text-input{
-    width: 60%;
+    width: 60%; 
     display: flex;
     justify-content: center;
-    margin-top: 10%;
-    height: 4%;
-    font-size: 16px;
+    font-size: 16px; 
+    margin-top: 5%;
 }
+
+.add-button{
+    width: 8%;
+    border: 2px solid black;
+    margin-top: 5%;
+}
+
