@@ -27,3 +27,9 @@
     height: 4%;
     font-size: 16px;
 }
+.getBookButton {
+    display: flex;
+    margin: 40px;
+    align-items: center;
+    
+}

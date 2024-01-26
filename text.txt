@@ -6,8 +6,8 @@ y el comando npx json-sevrer db.json
 3. Lo iniciaremos en un servidor https://localhost:3000 y JSON crea automaticamente endpoitns
 (puntos finales HTTP)
 http://localhost:3000/users?name=Eliana
-4. Posbilita la realizaciion de operaciones CRUD (crear, leer, actualizar,eliminar)
-5. Se pueden realizar solicitudes GET, PPOST, PUT PATH o DELETE
+4. Posibilita la realizaciion de operaciones CRUD (crear, leer, actualizar,eliminar)
+5. Se pueden realizar solicitudes GET, POST, PUT PATH o DELETE
 6. Una solicitud POST, PUT o PATH debe incluir un encabezado
  /*****************************************************************************/
  "scripts": {
@@ -28,7 +28,7 @@ http://localhost:3000/users?name=Eliana
 }
 Si quieres poner una nueva propiedad hay q crearlo desde el back, (Es decir, desde el documento db.json)
 
-con PUT te actualiza algo concreto pero hay q escribir todas las propiedades por q si no te las borra, aqui 
+con PUT te actualiza algo concreto pero hay q escribir todas las propiedades porque si no te las borra, aquí 
 todas ej: id, name, email
 con PATH no hace falta escribir todas las propiedades, solo le pongo la que quiero modificar ej: email 
 y ya esta
