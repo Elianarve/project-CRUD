@@ -1,0 +1,25 @@
+{
+   "books": [
+    {
+        "id": "1",
+        "title": "El alquimista",
+        "rating": 9,
+        "author": "Paulo Coelho",
+        "imageUrl": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/thumbs/54e8361f-d68d-4462-84c6-d06ef130f5ae/d_295_510/portada_el-alquimista_paulo-coelho_201612191218.webp"
+    },
+    {
+        "id": "2",
+        "title": "Cien años de soledad",
+        "rating": 10,
+        "author": "Gabriel Garcia Marquez",
+        "imageUrl": "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202211/30/00106520210292____19__640x640.jpg"
+    },
+    {
+        "id": "3",
+        "title": "La sombra del viento",
+        "rating": 8,
+        "author": "Carlos Ruiz Zafón",
+        "imageUrl": "https://imagessl5.casadellibro.com/a/l/s5/45/9788408043645.webp"
+    }
+   ] 
+}
