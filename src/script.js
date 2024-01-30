@@ -62,7 +62,7 @@ async function addBooks() {
     });
 
     if (response.ok) {
-        console.log(printBooks());
+        printBooks();
         swal('Libro añadido correctamente ✅');
     } else {
         console.error('Error al añadir el libro.');
