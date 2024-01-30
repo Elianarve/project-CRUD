@@ -8,16 +8,23 @@
 </head>
 
 <body>
-    <div class="container">
-        <label id="BookTitle">Título:</label>
-        <h3><input type="text-input" class="text-input" id="formGroupExampleInput" placeholder="Introduce aquí el título del libro">
-        </h3>  
-        <button onclick="printBooks()">Cargar info</button>
-        <section id="book-list">
-    
-        </section>
-    </div>
+    <form id="books-form">
+
+        <label for="id">ID:</label><input type="id" id="id">
+        <label for="title">Título:</label><input type="text" id="title"
+            placeholder="Introduce aquí el título del libro">   
+        <label for="author">Autor:</label><input type="text" id="author">     
+    </form>
+    <button onclick="createBook()">Agregar</button>
+
+    <section id="books-list">Listado de libros recomendados
+        <!--Aquí se mostrarán los datos de la base de datos-->
+    </section>
+
+    <button type="submit" class= "cargar" onclick="printBooks()">Cargar info</button>
+
     <script src="./src/script.js"></script>
 
 </body>
+
 </html>

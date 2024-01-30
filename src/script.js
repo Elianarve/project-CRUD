@@ -1,31 +1,76 @@
 
-//Método GET R (read) del CRUD. hay dos funciones: la primera, en línea 3 llama a la API con fetch. Recibe datos y los saca con un return. Línea dos pasamos la petición a JSON.
+// Este evento se activa cuando el DOM ha sido completamente cargado.
+document.addEventListener('DOMContentLoaded', () => {
+// Al cargar el DOM, se llama a la función cargarDatos para mostrar la información inicial.
+    cargarDatos();
+});
+
+// Método GET del CRUD (READ). La función cargarDatos realiza una solicitud GET a la API para obtener la lista de libros.
 async function getBooks(){
-    const result = await fetch ("http://localhost:3000/books")
-    const data = await result.json()
+    const result = await fetch("http://localhost:3000/books");
+// Obtenemos la lista de libros en formato JSON.
+    const data = await result.json();
      return data
  }
  
- let addBooks = document.getElementById("book-list")
- 
+ let addBooks = document.getElementById("books-list")
+ // Se itera sobre cada libro y se genera una fila en la tabla con su información.
  async function printBooks() {
-     let book = await getBooks()
-     book.map(book => {
+     let books = await getBooks()
+     books.map(book => {
      addBooks.innerHTML += 
-     `<h3>${book.title}</h3>
-     <p>${book.id}</p>
-     <button onclick="getBook(${book.title})">Añadir</button>`
+     `<p>${book.id}</p>
+     <h3>${book.title}</h3>
+     <p>${book.author}</p>`
  
      })
  }
- //La segunda función, en línea 7 se selecciona la section de html y la selecciona. Creo función para imprimir libros. La línea 9 ha recibido un array de libros, que puedo recorrer con map
- // En la línea 10, por cada libro, imprime
+
+ //Metodo DELETE del CRUD.
+async function deleteBook(id) {
+    const result = await fetch(`http://localhost:3000/books${id}`,
+    {method: "DELETE"})
+    return result
+}
+
+ //Método POST C (CREATE) del CRUD con formulario 
+async function createBook() {
+    // Solicitar al usuario ingresar información para el nuevo libro.
+    const formBook = document.getElementById("books-form")
+    const newBook = {
+        "title": formBook.elements[1].value,
+        "author": formBook.elements[2].value
+
+    };
+
+    const result = await fetch(`http://localhost:3000/books`, 
+    {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newBook),
+    });
+}
+
+
  
  //Método delete D del CRUD
- async function deleteBooks(id) {
-     const result = await fetch (`http://localhost:3000/books${id}`,
-     {method:"DELETE"})
-     return result
- }
- //La función se llama deleteUser y la llamamos con el botón
+//  async function deleteBooks(title) {
+//      const result = await fetch (`http://localhost:3000/books${title}`,
+//      {method:"DELETE"})
+//      return result
+ //}
+
+ //let deleteBooks = document.getElementById("book-list")
+
+//async function printBooks() {
+    //let book = await getBooks()
+    //users.map(user => {
+    //sectionTag.innerHTML += 
+    //`<h3>${book.name}</h3>
+    // <p>${book.email}</p>
+    // <button onclick="deleteBook(${user.id})">Delete</button>`
+
+   // })
+//}
+ //La función se llama deleteBooks y la llamamos con el botón
 
