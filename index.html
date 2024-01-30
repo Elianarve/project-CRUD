@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".//src/styles.css">
-    <title>API libros</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-    <form class="container">
-        <h1 class="title">Libros</h1>
-        <p class="paragraph">Introduce el libro que quieres leer</p>
-    <div class="div-input">
-        <input class="text-input" name="title" type="text" placeholder="Introduce el libro que quieres ver" />
-        <button class="add-button" onclick="printBooks()">+</button>    
-    </div>
-    <section id="list-books">
-    </section>
-    </form>
+    <header>
+        <nav class="nav">
+            <img class="img-nav" src="./src/img/book.png" alt="">
+            <h1>BookLandia...</h1>
+            <div class="buttons">
+                <button class="button-read" type="submit" onclick="printBooks()">Mostrar libros</button>
+                <button class="button-add" type="submit" onclick="addBooks()">Añadir libros</button>
+             </div>
+            </nav>
+    </header>
+    <p class="paragraph">
+        Bienvenido/as a nuestra web de libros.<br>
+        Aquí podrás ver, editar, añadir y eliminar tu lista personal de libros.
+    </p>
+   <table class="table-container">
+    <thead>
+    <tr>
+        <th>Nº De REFERENCIA</th>
+        <th>TITUTLO DEL LIBRO</th>
+        <th>AUTOR</th>
+        <th>VALORACIÓN</th>
+        <th>MODIFICACIONES</th>
+    </tr>
+</thead>
+<tbody id="tb-body">    
+</tbody>
+   </table>
 
     <script src="./src/script.js"></script>
 </body>

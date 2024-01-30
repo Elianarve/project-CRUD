@@ -1,25 +1,58 @@
 {
-   "books": [
+  "books": [
     {
-        "id": "1",
-        "title": "El alquimista",
-        "rating": 9,
-        "author": "Paulo Coelho",
-        "imageUrl": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/thumbs/54e8361f-d68d-4462-84c6-d06ef130f5ae/d_295_510/portada_el-alquimista_paulo-coelho_201612191218.webp"
+      "id": "1",
+      "title": "El alquimista",
+      "rating": 10,
+      "author": "Paulo Coelho"
     },
     {
-        "id": "2",
-        "title": "Cien años de soledad",
-        "rating": 10,
-        "author": "Gabriel Garcia Marquez",
-        "imageUrl": "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202211/30/00106520210292____19__640x640.jpg"
+      "id": "2",
+      "title": "Cien años de soledad",
+      "rating": 10,
+      "author": "Gabriel Garcia Marquez"
     },
     {
-        "id": "3",
-        "title": "La sombra del viento",
-        "rating": 8,
-        "author": "Carlos Ruiz Zafón",
-        "imageUrl": "https://imagessl5.casadellibro.com/a/l/s5/45/9788408043645.webp"
+      "id": "3",
+      "title": "La sombra del viento",
+      "rating": 8,
+      "author": "Carlos Ruiz Zafón"
+    },
+    {
+      "id": "4",
+      "title": "Padre rico padre pobre",
+      "rating": 7,
+      "author": "Robert Kiyozaki"
+    },
+    {
+      "id": "5",
+      "title": "Los siete habitos de la gente altamente efectiva",
+      "rating": 8,
+      "author": "Stephen R. Covey"
+    },
+    {
+      "id": "6",
+      "title": "El monje que perdio su ferrari",
+      "rating": 8,
+      "author": "Robin Sharma"
+    },
+    {
+      "id": "7",
+      "title": "El cuco de cristal",
+      "rating": 6,
+      "author": "Javier Castillo"
+    },
+    {
+      "title": "El problema final",
+      "rating": "9",
+      "author": "Arturo Perez Reverte",
+      "id": "8"
+    },
+    {
+      "id": "91d7",
+      "title": "eliana",
+      "rating": "8",
+      "author": "marcela"
     }
-   ] 
+  ]
 }
