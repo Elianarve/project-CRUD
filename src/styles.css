@@ -10,33 +10,89 @@ body {
     padding: 20px;
 }
 
-#books-form {
+body{
+    background-color: #F0ECE5;
+}
+
+.nav{
+    height: 110px;
+    background-color: #B6BBC4;
+    display: flex;
+}
+
+h1{
+    margin-top: 30px;
+    font-size: 45px;
+    font-family: monospace;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-#books-form label {
-    margin-right: 10px;
+.img-nav{
+    height: 110px;
+    margin-left: 100px;
 }
 
-#books-list {
-    margin-top: 20px;
-}
-
-#books-list table {
-    width: 100%;
+.table-container {
     border-collapse: collapse;
+    width: 60%;
+    margin-top: 5%;
 }
 
-#books-list th, #books-list td {
+th, td {
+    border: 1px solid #ddd;
     padding: 8px;
-    border: 1px solid #f5f5f5;
+    text-align: center;
 }
 
-#books-list th {
+th {
     background-color: #f2f2f2;
 }
 
-#books-list button {
-    margin-right: 5px;
+.buttons{
+    margin: 30px 100px;
+}
+
+.button-read{
+    border-radius: 150px;
+    padding: 2%;
+    color: #f2f2f2;
+    width: 135px;
+    height: 54px;
+    background-color: black;
+    font-size: 17px;
+}
+
+.button-read:hover, .button-add:hover{
+    box-shadow:  0px 0px 7px black inset,
+                 0px 0px 7px black;
+}
+
+.button-add{
+    border-radius: 150px;
+    padding: 2%;
+    width: 135px;
+    height: 54px;
+    margin-left: 50px; 
+    color: #f2f2f2;
+    background-color: black;
+    font-size: 17px;
+}
+
+.button-edit{
+    border-radius: 150px;
+    padding:3%;
+    background-color: green;
+    color: white;
+}
+
+.button-delete{
+    border-radius: 150px;
+    padding:3%;
+    background-color: red;
+    color: white;
+}
+
+.paragraph{
+    font-size: 20px;
+    margin: 2% 0 0 3%;
 }

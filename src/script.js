@@ -1,76 +1,122 @@
+//METODO GET -> R
 
-// Este evento se activa cuando el DOM ha sido completamente cargado.
-document.addEventListener('DOMContentLoaded', () => {
-// Al cargar el DOM, se llama a la función cargarDatos para mostrar la información inicial.
-    cargarDatos();
-});
-
-// Método GET del CRUD (READ). La función cargarDatos realiza una solicitud GET a la API para obtener la lista de libros.
 async function getBooks(){
-    const result = await fetch("http://localhost:3000/books");
-// Obtenemos la lista de libros en formato JSON.
+    const result = await fetch('http://localhost:3000/books');
     const data = await result.json();
-     return data
- }
- 
- let addBooks = document.getElementById("books-list")
- // Se itera sobre cada libro y se genera una fila en la tabla con su información.
- async function printBooks() {
-     let books = await getBooks()
-     books.map(book => {
-     addBooks.innerHTML += 
-     `<p>${book.id}</p>
-     <h3>${book.title}</h3>
-     <p>${book.author}</p>`
- 
-     })
- }
-
- //Metodo DELETE del CRUD.
-async function deleteBook(id) {
-    const result = await fetch(`http://localhost:3000/books${id}`,
-    {method: "DELETE"})
-    return result
+    return data;
 }
 
- //Método POST C (CREATE) del CRUD con formulario 
-async function createBook() {
-    // Solicitar al usuario ingresar información para el nuevo libro.
-    const formBook = document.getElementById("books-form")
-    const newBook = {
-        "title": formBook.elements[1].value,
-        "author": formBook.elements[2].value
+let listBooks = document.getElementById('tb-body');
 
-    };
 
-    const result = await fetch(`http://localhost:3000/books`, 
-    {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newBook),
+async function printBooks(){
+    listBooks.innerHTML = '';
+    const books = await getBooks(); 
+    books.map(book => { 
+    listBooks.innerHTML += `
+    <tr>
+    <td><strong>${book.id}</strong></td>
+    <td><strong>${book.title}</strong></td>
+    <td>${book.author}</td>
+    <td>${book.rating}</td>
+    <td>
+    <button class=button-edit onclick="editBook('${book.id}')">Editar</button>
+    <button class=button-delete onclick="deleteBook('${book.id}')">Eliminar</button>
+    </td>
+    </tr>
+    `
     });
+};
+
+//METODO POST -> crear - añadir
+async function addBooks() {
+    const newTitle = prompt('Ingrese un titulo:');
+    const newAutor = prompt('Ingrese un autor:');
+    const newRating = prompt('Ingrese una valoracion del 1 al 10:');
+
+    if (!/^[A-Za-z0-9\s]+$/g.test(newTitle)) {
+        alert('Por favor, ingrese un titulo valido.');
+        return;
+    }
+
+    if (!/^[0-9]+$/.test(newRating)) {
+        alert('Por favor, ingrese un numero del 1 al 10.');
+        return;
+    }
+
+    if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(newAutor)) {
+        alert('Por favor, ingrese un nombre valido.');
+        return;
+    }
+
+    const response = await fetch('http://localhost:3000/books', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            title: newTitle,
+            rating: newRating,
+            author: newAutor,
+        }),
+    });
+
+    if (response.ok) {
+        printBooks();
+        swal('Libro añadido correctamente ✅');
+    } else {
+        console.error('Error al añadir el libro.');
+    }
 }
 
+//METODO DELETE -> D
 
- 
- //Método delete D del CRUD
-//  async function deleteBooks(title) {
-//      const result = await fetch (`http://localhost:3000/books${title}`,
-//      {method:"DELETE"})
-//      return result
- //}
+async function deleteBook(id){                 
+    const result = await fetch(`http://localhost:3000/books/${id}`, {method:"DELETE"}
+    ).then(response => {
+        // Verificar si la solicitud fue exitosa (código de estado 200-299)
+        if (response.ok) {
+            printBooks();
+            swal('Libro eliminado correctamente ✅');
+        }});
+}
 
- //let deleteBooks = document.getElementById("book-list")
+//METODO UPDATE -> U
 
-//async function printBooks() {
-    //let book = await getBooks()
-    //users.map(user => {
-    //sectionTag.innerHTML += 
-    //`<h3>${book.name}</h3>
-    // <p>${book.email}</p>
-    // <button onclick="deleteBook(${user.id})">Delete</button>`
+async function editBook(id) {
+    const newTitle = prompt('Ingrese un titulo:');
+    const newAutor = prompt('Ingrese un autor:');
+    const newRating = prompt('Ingrese una valoracion del 1 al 10:');
 
-   // })
-//}
- //La función se llama deleteBooks y la llamamos con el botón
+    if (!/^[A-Za-z0-9\s]+$/g.test(newTitle)) {
+        alert('Por favor, ingrese un titulo valido.');
+        return;
+    }
 
+    if (!/^[0-9]+$/.test(newRating)) {
+        alert('Por favor, ingrese un numero del 1 al 10.');
+        return;
+    }
+
+    if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(newAutor)) {
+        alert('Por favor, ingrese un nombre valido.');
+        return;
+    }
+    const response = await fetch(`http://localhost:3000/books/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            title: newTitle,
+            rating: newRating,
+            author: newAutor,
+        }),
+    });
+
+    if (response.ok) {
+        printBooks();
+    } else {
+        swal('Error al cambiar el libro.');
+    }
+}

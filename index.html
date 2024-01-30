@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".//src/styles.css">
-    <title>API libros</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <h2 class="header">Bienvenidos al listado de libros recomendados</h2>
-    <form id="books-form">
-
-        <label for="id">ID:</label><input type="id" id="id">
-        <label for="title">Título:</label><input type="text" id="title"
-            placeholder="Introduce aquí el título">   
-        <label for="author">Autor:</label><input type="text" id="author"placeholder="Introduce aquí el autor">     
-    </form>
-    <h3>Haz click en el botón "Cargar info" para ver la lista y en "Agregar" para añadir tus libros favoritos </h3>
-        <button type="submit" class= "cargar" onclick="printBooks()">Cargar info</button>
-        <button onclick="createBook()">Agregar</button>
-    <section id="books-list">
-        <!--Aquí se mostrarán los datos de la base de datos-->
-    </section>
-
-    
+    <header>
+        <nav class="nav">
+            <img class="img-nav" src="./src/img/book.png" alt="">
+            <h1>BookLandia...</h1>
+            <div class="buttons">
+                <button class="button-read" type="submit" onclick="printBooks()">Mostrar libros</button>
+                <button class="button-add" type="submit" onclick="addBooks()">Añadir libros</button>
+             </div>
+            </nav>
+    </header>
+    <p class="paragraph">
+        Bienvenido/as a nuestra web de libros.<br>
+        Aquí podrás ver, editar, añadir y eliminar tu lista personal de libros.
+    </p>
+   <table class="table-container">
+    <thead>
+    <tr>
+        <th>Nº De REFERENCIA</th>
+        <th>TITUTLO DEL LIBRO</th>
+        <th>AUTOR</th>
+        <th>VALORACIÓN</th>
+        <th>MODIFICACIONES</th>
+    </tr>
+</thead>
+<tbody id="tb-body">    
+</tbody>
+   </table>
 
     <script src="./src/script.js"></script>
 

@@ -3,57 +3,50 @@
     {
       "id": "1",
       "title": "El alquimista",
+      "rating": 10,
       "author": "Paulo Coelho"
     },
     {
       "id": "2",
       "title": "Cien años de soledad",
+      "rating": 10,
       "author": "Gabriel Garcia Marquez"
     },
     {
       "id": "3",
       "title": "La sombra del viento",
+      "rating": 8,
       "author": "Carlos Ruiz Zafón"
     },
     {
       "id": "4",
-      "title": "el ataque",
-      "author": "Pilkey"
+      "title": "Padre rico padre pobre",
+      "rating": 7,
+      "author": "Robert Kiyozaki"
     },
     {
-      "id": "7476",
-      "title": "el olmo",
-      "author": "sdfh"
+      "id": "5",
+      "title": "Los siete habitos de la gente altamente efectiva",
+      "rating": 8,
+      "author": "Stephen R. Covey"
     },
     {
-      "id": "1292",
-      "title": "",
-      "author": ""
+      "id": "6",
+      "title": "El monje que perdio su ferrari",
+      "rating": 8,
+      "author": "Robin Sharma"
     },
     {
-      "id": "59b4",
-      "title": "",
-      "author": ""
+      "id": "7",
+      "title": "El cuco de cristal",
+      "rating": 6,
+      "author": "Javier Castillo"
     },
     {
-      "id": "c800",
-      "title": "",
-      "author": ""
-    },
-    {
-      "id": "2f22",
-      "title": "FSDFH",
-      "author": "SDFHDHDS"
-    },
-    {
-      "id": "10a4",
-      "title": "",
-      "author": ""
-    },
-    {
-      "id": "e653",
-      "title": "",
-      "author": ""
+      "title": "El problema final",
+      "rating": "9",
+      "author": "Arturo Perez Reverte",
+      "id": "8"
     }
   ]
 }
