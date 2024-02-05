@@ -56,12 +56,13 @@ th {
     font-size: 17px;
 }
 
-.button-read:hover, .button-add:hover{
+.button-read:hover, .button-add:hover, .button-search:hover{
     box-shadow:  0px 0px 7px black inset,
                  0px 0px 7px black;
+    cursor: pointer;             
 }
 
-.button-add{
+.button-add, .button-search{
     border-radius: 150px;
     padding: 2%;
     width: 135px;
@@ -89,4 +90,48 @@ th {
 .paragraph{
     font-size: 20px;
     margin: 2% 0 0 3%;
+}
+
+/*****************************/
+
+h2{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.list-books{
+    font-size: 20px;
+    border: black 2px double;
+    width: 35%;
+    list-style: none;
+}
+
+.best-books{
+    padding-left: 2rem;
+    background-image: url(./icons/star.png);
+    background-repeat: no-repeat;
+}
+
+
+.btn{
+    border-radius: 150px;
+    width: 260px;
+    background-color: black;
+    font-size: 15px;
+    color: white;
+}
+
+.book-list{
+    height: 40%;
+}
+
+.form{
+  width: 100%;
+  margin: 5%;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
 }

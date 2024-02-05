@@ -44,9 +44,27 @@
     },
     {
       "title": "El problema final",
-      "rating": "9",
+      "rating": 9,
       "author": "Arturo Perez Reverte",
       "id": "8"
+    },
+    {
+      "title": "Cronica de una muerte anunciada",
+      "rating": 10,
+      "author": "Gabriel Garcia Marquez",
+      "id": "9"
+    },
+    {
+      "title": "El capitan alatriste",
+      "rating": "7",
+      "author": "Arturo Perez Reverte",
+      "id": "10"
+    },
+    {
+      "id": "be5b",
+      "title": "eliana",
+      "rating": "8",
+      "author": "eliaa"
     }
   ]
 }

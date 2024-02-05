@@ -31,8 +31,9 @@ async function printBooks(){
 //METODO POST -> crear - añadir
 async function addBooks() {
     const newTitle = prompt('Ingrese un titulo:');
-    const newAutor = prompt('Ingrese un autor:');
+    let newAutor = prompt('Ingrese un autor:');
     const newRating = prompt('Ingrese una valoracion del 1 al 10:');
+    let regexAuthor = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
 
     if (!/^[A-Za-z0-9\s]+$/g.test(newTitle)) {
         alert('Por favor, ingrese un titulo valido.');
@@ -44,10 +45,19 @@ async function addBooks() {
         return;
     }
 
-    if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(newAutor)) {
-        alert('Por favor, ingrese un nombre valido.');
-        return;
-    }
+    // if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(newAutor)) {
+    //     alert('Por favor, ingrese un nombre valido.');
+    //     return;
+    // }
+    
+    do {
+        newAutor = prompt('Introduce un nombre de autor valido:');
+    } while (!regexAuthor.test(newAutor));
+    printBooks();
+
+    // La condición del bucle (while) verifica si la entrada del usuario (newAutor) no cumple
+    // con la expresión regular regexAuthor. Esto significa que el bucle se seguirá ejecutando
+    // mientras la entrada del usuario no coincida con el patrón definido por regexAuthor.
 
     const response = await fetch('http://localhost:3000/books', {
         method: 'POST',
@@ -72,7 +82,7 @@ async function addBooks() {
 //METODO DELETE -> D
 
 async function deleteBook(id){                 
-    const result = await fetch(`http://localhost:3000/books/${id}`, {method:"DELETE"}
+    await fetch(`http://localhost:3000/books/${id}`, {method:"DELETE"}
     ).then(response => {
         // Verificar si la solicitud fue exitosa (código de estado 200-299)
         if (response.ok) {

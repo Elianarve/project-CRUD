@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img class="img-nav" src="./img/book.png" alt="">
+            <a class="link" href="../index.html"><h1>BookLandia...</h1></a>
+            <div class="buttons">
+                <button class="button-read" type="submit" onclick="printBooks()">Mostrar libros</button>
+                <button class="button-add" type="submit" onclick="addBooks()">Añadir libros</button>
+                <a href="./search.html"><button class="button-search" type="submit">Buscar 🔍</button></a>
+             </div>
+            </nav>
+    </header>
+    <p class="paragraph">
+        Bienvenido/as a nuestra web de libros.<br>
+        Aquí podrás ver, editar, añadir y eliminar tu lista personal de libros.
+    </p>
+    <h2>Los 8 libros mejor valorados</h2>
+    <ul class="list-books">
+        <li class="best-books">El alquimista</li>
+        <li class="best-books">Cien años de soledad</li>
+        <li class="best-books">La sombra del viento</li>
+        <li class="best-books">Padre rico padre pobre</li>
+        <li class="best-books">Los siete habitos de la gente altamente efectiva</li>
+        <li class="best-books">El monje que perdio su ferrari</li>
+        <li class="best-books">El cuco de cristal</li>
+        <li class="best-books">El problema final</li>
+    </ul>
+
+    <form class="form">
+        <input type="text" id="book-titles">
+        <button class="btn" onclick="getBooksByTitle()" type="button">Imprimir libros por título</button><br><br>
+        <input type="text" id="book-authors">
+        <button class="btn" onclick="getBooksByAuthor()" type="button">Imprimir libros por Autor</button>
+        <section id="book-list">
+        </section>
+    </form>
+
+    <script src="../src/search.js"></script>
+</body>
+</html>
